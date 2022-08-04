@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Tags"
+title: "Lists"
 description: "文章目录"  
 header-img: "img/semantic.jpg"  
 ---
