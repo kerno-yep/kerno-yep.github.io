@@ -4,56 +4,13 @@
 {% include head.html %}
 <!-- 添加鼠标点击文字特效 -->
 
-<!--添加雪花飘落效果-->
- 		<script>
-	
-				window.onload=function(){
-						setInterval(function(){
-							createSnow();
-						},10);
-						
-					}
-					
-					
-					//这个函数是创建一个雪花
-					function  createSnow(){
-						var  snow=document.createElement("img");
-						//创建属性节点
-					
-						snow.src="/img/snow1.png";
-						
-						snow.style.width="20px";
-						snow.style.height="20px";
-						snow.style.position="absolute";
-						snow.style.top="0px";
-						
-						//随机改变雪花的横向坐标的位置
-						snow.style.left=parseInt(Math.random()*window.innerWidth)+"px";
-						
-						//将snow节点  插入到body节点内  
-						document.body.appendChild(snow);
-						
-						var  timer=setInterval(function(){
-							
-								snow.style.top=parseInt(getStyle(snow,"top"))+5+"px";
-								if(parseInt(getStyle(snow,"top"))>=(window.innerHeight-40)){
-										snow.style.display="none";
-										
-								}
-						},1000)
-						
-						
-						//兼容写法  返回当前元素的属性值
-						function  getStyle(ele,arr){
-						    return	ele.currentStyle? ele.currentStyle(arr):getComputedStyle(ele)[arr];
-						
-						}
-					}
-		</script>
+
 
 
 <body ontouchstart="">
-
+<div class="container">
+	<img class="test" src="/img/233.jpg">
+</div>
     {% include nav.html %}
 
     {{ content }}
