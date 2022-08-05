@@ -1,11 +1,11 @@
 ---
 layout: page
 title: "About"
-description: "你的博客描述 " 
+description: " 踩坑填坑记录 " 
 header-img: "img/1.jpg"
 ---
 
-预留页面
+
 
 
 
