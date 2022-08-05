@@ -1,6 +1,6 @@
 # Site settings
 title: "Kerno's blog" # 你的博客名字，可以定义修订
-header-img: "img/green.jpg"
+header-img: "img/233.jpg"
 tagline: "cn"  
 description: "风雨顺时，无病欢乐"  # 一句话描述你的博客
 baseurl: ""
@@ -9,12 +9,12 @@ url: "https://kerno-yep.github.io/"  # 此处填写你的博客地址
 # About/contact
 owner: 
   name: "kerno" # 填写作者信息：名字
-  email: kerne1@foxmail.com # 填写作者信息：邮箱
+  email: "kerne1@foxmail.com" # 填写作者信息：邮箱
   bio: "收藏从未开始，学习从未开始" # 填写作者信息：博客描述
 
 # Data
-gavatar: img/logo.png # 浏览器地址栏小图标，可自定义更改
-favicon: img/logo.png # 浏览器地址栏小图标，可自定义更改
+gavatar: "img/logo.png" # 浏览器地址栏小图标，可自定义更改
+favicon: "img/logo.png" # 浏览器地址栏小图标，可自定义更改
 
 
 # Build settings  
