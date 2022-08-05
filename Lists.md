@@ -5,7 +5,11 @@ description: "文章目录"
 header-img: "img/3.jpg"  
 ---
 
+<<<<<<< HEAD:tags.md
 # 本页使用方法
+=======
+## 本页使用方法
+>>>>>>> c1dd1991ded6de14f99c34375734508a0d75fbd4:Lists.md
 
 1. 在下面选一个你喜欢的词
 2. 点击它
