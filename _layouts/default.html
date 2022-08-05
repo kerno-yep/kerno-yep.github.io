@@ -3,124 +3,88 @@
 
 {% include head.html %}
 <!-- 添加鼠标点击文字特效 -->
-<script type="text/javascript">
-    var a_idx = 0;
-    jQuery(document).ready(function($) {
-        $("body").click(function(e) {
-            var a = new Array("❤","❤广告位❤","❤招租❤","❤");
-            var $i = $("<span></span>").text(a[a_idx]);
-            a_idx = (a_idx + 1) % a.length;
-            var x = e.pageX,
-            y = e.pageY;
-            $i.css({
-                "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
-                "top": y - 20,
-                "left": x,
-                "position": "absolute",
-                "font-weight": "bold",
-                "color": "rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"
-            });
-            $("body").append($i);
-            $i.animate({
-                "top": y - 180,
-                "opacity": 0
-            },
-            1500,
-            function() {
-                $i.remove();
-            });
-        });
-    });
-    </script>
-<!--添加雪花飘落效果-->
-<script>
-		//判断IE
-		function isIE(){
-		    var b = document.createElement('b');
-		    b.innerHTML = '<!--[if lte IE 8]><i></i><![endif]-->';
-		    return b.getElementsByTagName('i').length === 1;
-		};
-		//定义雪花
-		function CreateSnow(snowBox,src,style){
-			this.snowBox = document.getElementById(snowBox);//找到容器
-			this.snowStyle = Math.ceil(Math.random()*style);//雪花类型[1,2]
-			this.maxLeft = this.snowBox.offsetWidth-Math.random()*5+3;//运动范围
-			this.maxTop = this.snowBox.offsetHeight-Math.random()*5+3;
-			this.left = this.snowBox.offsetWidth*Math.random();//起始位置
-			this.top = this.snowBox.offsetHeight*Math.random();
-			this.angle=1.1+0.8*Math.random();//飘落角度
-			this.minAngle=1.1;
-			this.maxAngle=1.9;
-			this.angleDelta=0.01*Math.random();
-			this.speed=1.4+Math.random();//下落速度
-			this.createEle(src);//制作雪花dom   凹=放在最后，使得原型里能取到值
-		};
-		//雪片生成+下落
-		CreateSnow.prototype = {
-			createEle : function(baseSrc){//生成雪花元素
-				var srcIndex = baseSrc.lastIndexOf('.'),//获取最后一个'.'
-					src = baseSrc.substring(0,srcIndex)+this.snowStyle+baseSrc.substring(srcIndex,baseSrc.length);
-				var image = new Image();
-					image.src = src;
-				this.ele = document.createElement("img");
-				this.ele.setAttribute('src',src);
-				this.ele.style.position="absolute";
-				this.ele.style.zIndex="99";
-				this.snowBox.appendChild(this.ele);
-				//设置雪花尺寸
-				var img = this.ele;
-				image.onload = function(){
-					imgW = image.width;
-					img.setAttribute('width',Math.ceil(imgW*(0.1+Math.random())));
-					if(isIE()){//如果旧IE，设置高度
-						imgH = image.height;
-						img.setAttribute('height',Math.ceil(imgH*(0.1+Math.random())));
-					}
-				};
-			},
-			move : function(){//雪花运动
-				if(this.angle< this.minAngle||this.angle>this.maxAngle){
-				    this.angleDelta=-this.angleDelta;
-				}
-				this.angle+=this.angleDelta;
-				this.left+=this.speed*Math.cos(this.angle*Math.PI);
-				this.top-=this.speed*Math.sin(this.angle*Math.PI);
-				if(this.left<0){
-				    this.left=this.maxLeft;
-				}else if(this.left>this.maxLeft){
-				    this.left=0
-				}
-				if(this.top>this.maxTop){//雪花掉出来后回到顶部
-				    this.top=0;
-				}
-				this.ele.style.left=this.left+'px';//凹=加‘px’
-				this.ele.style.top=this.top+'px';
-			}
-		};
-		//下雪启动
-		function goSnow(snowBox,src,num,style){
-			var snowArr = [];
-			for(var j = 0 ; j<num ; j++){
-				snowArr.push(new CreateSnow(snowBox,src,style));
-			}
-			var makeSnowtime = setInterval(function(){
-				for(var i = snowArr.length-1;i>=0;i--){//找到数组中的最新的一个
-					if(snowArr[i]){
-						snowArr[i].move();
-					}
-				}
-			},40);
-		};
-		//初始化加载
-		window.onload = function(){
-			var snowBox = 'snowBox',//雪花容器
-				src = './img/snow.png',//雪花图基本命名<图片名就是snow+1/2/3/4...>
-				num = 16,//雪花数量
-				style = 2;//图片种类数
-			goSnow(snowBox,src,num,style);
-		};
-	</script>
 
+<!--添加雪花飘落效果-->
+  <style type="text/css">
+        *{
+            margin:0;
+            padding:0;
+        }
+        #header{
+            width:100%;
+            height:315px;
+            background:url('images/snow-bg.png') repeat-y center,url('images/header-bg.png');
+            -webkit-animation:auto 20s linear infinite;
+        }
+        #header:hover{
+            -webkit-animation-play-state: paused;
+        }
+        @-webkit-keyframes auto {
+            0%{background-position:center 0,0 0 }
+            100%{background-position:center 885px,0 0}
+        }
+        @-webkit-keyframes play{
+            0%{-webkit-transform:translate(0,-315px);}
+            100%{-webkit-transform:translate(0,0);}
+        }
+        #header .con .tree,#header .con .ice{
+            -webkit-animation:play 1s;
+        }
+        #header .con{
+            width:960px;
+            height:315px;
+            background-image:url('images/con-bg.png');
+            background-repeat:no-repeat;
+            background-position:0 204px;
+            position:relative;
+        }
+        #header .con .tree{
+            width:115px;
+            height:103px;
+            background:url("images/tree.png");
+            position:absolute;
+        }
+        #header .con .ice{
+            width:115px;
+            height:103px;
+            background:url("images/ice.png");
+            position:absolute;
+            left:410px;
+            top:210px;
+        }
+        #header .con .tree1{
+            left:35px;
+            top:169px;
+            -webkit-animation-duration:.6s;
+        }
+        #header .con .tree2{
+            left:200px;
+            top:180px;
+            -webkit-animation-duration:.2s;
+        }
+        #header .con .tree3{
+            left:350px;
+            top:125px;
+            -webkit-animation-duration:.3s;
+        }
+        #header .con .tree4{
+            left:515px;
+            top:150px;
+            -webkit-animation-duration:.4s;
+        }
+        #header .con .tree5{
+            left:680px;
+            top:170px;
+            -webkit-animation-duration:.5s;
+        }
+        #header .con .tree6{
+            left:805px;
+            top:125px;
+            -webkit-animation-duration:.6s;
+        }
+
+
+    </style>
 
 
 <body ontouchstart="">
