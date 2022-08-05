@@ -1,6 +1,6 @@
 # Site settings
 title: "Kerno's blog" # 你的博客名字，可以定义修订
-header-img: "img/233.jpg"
+header-img: "img/yanhaiqin.jpg"
 tagline: "cn"  
 description: "风雨顺时，无病欢乐"  # 一句话描述你的博客
 baseurl: ""
@@ -38,4 +38,4 @@ defaults:
     values:
       layout: "post"
       author: "kerno" # 你的名字
-      header-img: "img/green.jpg" # We don't want posts without a header image, that whould mean white on white
+      header-img: "img/yanhaiqin.jpg" # We don't want posts without a header image, that whould mean white on white
