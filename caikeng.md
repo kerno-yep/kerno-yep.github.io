@@ -9,5 +9,9 @@ header-img: "img/1.jpg"
 
 解决方案：使用git配置ssh公钥后，将git的http流量代理到本地代理服务器端口
 
+```shell
+git config --global http.proxy http://127.0.0.1:port
+```
+
 
 
