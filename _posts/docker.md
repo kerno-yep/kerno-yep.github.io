@@ -1,0 +1,67 @@
+---
+layout: post
+title: docker
+date: 2022-8-12
+categories: blog
+tags: [笔记,docker]
+description: docker技术整理
+
+
+---
+
+**docker备忘录**
+
+docker的核心：镜像，容器，仓库
+
+#### docker比虚拟机快速的原因
+
+docker移除了虚拟机中的`Hypervisor(硬件资源虚拟化)`和`Guest OS`,使用`Docker Engine`取代，省略了大部分的硬件资源和新的操作系统内核的加载过程
+
+#### docker命令
+
+```shell
+docker -d #后台运行
+docker -q #只显示镜像ID，批处理镜像时使用
+docker rmi -f 镜像名 #强制删除正在运行的镜像
+docker ps -q #只显示容器ID,批处理容器时使用
+docker exec 容器名 -it /bin/bash #进入一个容器 
+docker attach 容器名 #进入容器
+```
+
+#### 容器数据卷
+
+作用：数据持久化，数据共享和对接
+
+```shell
+docker -v /宿主机存储位置:/容器内同步位置  容器ID
+```
+
+#### dockerfile
+
+过程：手动编写dockerfile文件，必须要符合file规范 => docker build => run
+
+dockerfile编写规则  1.每条保留字指令必须为大写字母且后面至少要跟随一个参数 2.指令从上到下，顺序执行  3.`#`表示注释   4.每条指令都会创建一个新镜像层并提交
+
+```shell
+#构建dockerfile
+docker build -f 路径 镜像名:版本号 .
+docker build 镜像名 .
+```
+
+#### 保留字指令
+
+```dockerfile
+FROM #基础镜像
+MAINTAINER #作者
+RUN #构建容器需要运行的命令
+EXPOSE #对外暴露的端口号
+WORKDIR #终端默认的登录进来的工作目录
+ENV #设置环境变量
+ADD #拷贝+解压缩
+COPY #拷贝
+VOLUME #数据保存和持久化
+CMD #指定容器启动时执行的命令，cmd可以有多个，只有最后一个生效
+ENTRYPOINT #指定容器启动时执行的命令，可以有多个，进行覆盖
+ONBUILD #继承时使用
+```
+
