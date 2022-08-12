@@ -39,7 +39,23 @@ header-img: "img/2.jpg"
 
 当 Bucket 不存在时有两种返回情况，分别是 `InvalidBucketName` 和 `NoSuchBucket` 当 Bucket 存在时也会有两种情况，分别是列出 `Object`和返回 `AccessDenied`
 
+**Bucket接管**
 
+当访问页面有显示`NoSuchBucket`,说明Bucket可以被接管，在控制台创建同名的Bucket即可接管目标Bucket，成功接管之后再次访问页面就会显示`AccessDenied`
+
+在控制台将Bucket设置为公开，且尝试上传访问成功即完成接管
+
+
+
+**S3任意文件上传**
+
+当对象存储配置不当，可能会造成任意文件上传和文件覆盖
+
+利用`put方法`对文件进行恶意写入，可能造成钓鱼，挂黑页，暗链等
+
+**Bucket ACL可写**
+
+查看目标Bucket ACL策略，根据预定义组可以分析出`URI=http://acs.amazonmaws.com/groups/global/AllUsers`=>当用户被授予`WRITE`,`WRITE_ACP`,`FULL_CONTROL`权限时，所有用户可以访问Bucket且写入ACL，当修改权限为FULL_CONTROL即可完全控制目标Bucket
 
 
 
