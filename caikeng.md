@@ -14,7 +14,7 @@ header-img: "img/1.jpg"
 git config --global http.proxy http://127.0.0.1:port
 ```
 
-## 2022/8/ 6 Typora 永久性插入图片
+## 2022/8/6 Typora 永久性插入图片
 
 解决：
 将图片base64编码，利用`<img src='base64编码内容'>`插入
