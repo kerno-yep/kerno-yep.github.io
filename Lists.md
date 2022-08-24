@@ -4,7 +4,8 @@ title: "Lists"
 description: "文章目录"  
 header-img: "img/233.jpg"  
 ---
-## 基因列表
+
+## 列表
 
 
 <div id='tag_cloud'>
