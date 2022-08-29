@@ -38,11 +38,11 @@ https://pypi.mirrors.ustc.edu.cn/simple
 http://pypi.douban.com/simple/
 阿里镜像
 https://mirrors.aliyun.com/pypi/simple/
-3.4 华中科大镜像
+华中科大镜像
 http://pypi.hustunique.com/
-3.5 山东理工大学镜像
+山东理工大学镜像
 http://pypi.hustunique.com/
-3.6 搜狐镜像
+搜狐镜像
 http://mirrors.sohu.com/Python/
-3.7 百度镜像
+百度镜像
 https://mirror.baidu.com/pypi/simple
