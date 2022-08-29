@@ -29,6 +29,7 @@ git rm --cached 'xxxx'
 
 解决：
 国内常用镜像源汇总
+
 清华镜像
 https://pypi.tuna.tsinghua.edu.cn/simple
 中科大镜像
