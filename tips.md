@@ -46,3 +46,18 @@ http://pypi.hustunique.com/
 http://mirrors.sohu.com/Python/  
 百度镜像  
 https://mirror.baidu.com/pypi/simple
+
+## 2022/9/19 文件位置
+
+hosts文件位置：`win10`C:\Windows\System32\drivers\etc  
+WMPFRuntime文件位置：  C:\Users\user\AppData\Roaming\Tencent\WeChat\XPlugin\Plugins\WMPFRuntime
+
+## 2022/9/19 nslookup记录
+
+A记录：Address，记录主机的IP地址  
+MX记录：Mail Exchanger，邮件交换记录  
+CNAME记录：Canonical Name，将多个域名映射到同一个ip的设置记录  
+NS记录：Name Server, 记录域名由哪一个dns服务器进行解析  
+PTR记录：Pointer Record，进行反向地址解析调用的记录  
+AAAA记录：将域名解析到IPv6地址的DNS记录  
+TXT记录：TXT记录一般指为某个主机名或域名设置的说明 
