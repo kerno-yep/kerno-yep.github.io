@@ -14,16 +14,20 @@ header-img: "img/1.jpg"
 git config --global http.proxy http://127.0.0.1:port
 ```
 
-## 2022/8/6 Typora 永久性插入图片
+****
 
+## 2022/8/6 Typora 永久性插入图片
 
 将图片base64编码，利用`<img src='base64编码内容'>`插入  
 将图片base64编码，利用`![][1]` `[]:base64编码内容` 插入
 
+****
+
 ## 2022/8/29 fatal: No url found for submodule path 'xxxx' in .gitmodules
 
-
 git rm --cached 'xxxx'
+
+****
 
 ## 2022/8/29 pip换源
 
@@ -46,10 +50,14 @@ http://mirrors.sohu.com/Python/
 百度镜像  
 https://mirror.baidu.com/pypi/simple
 
+****
+
 ## 2022/9/19 文件位置
 
 hosts文件位置：`win10`C:\Windows\System32\drivers\etc  
 WMPFRuntime文件位置：  C:\Users\user\AppData\Roaming\Tencent\WeChat\XPlugin\Plugins\WMPFRuntime
+
+****
 
 ## 2022/9/19 nslookup记录
 
@@ -59,4 +67,14 @@ CNAME记录：Canonical Name，将多个域名映射到同一个ip的设置记�
 NS记录：Name Server, 记录域名由哪一个dns服务器进行解析  
 PTR记录：Pointer Record，进行反向地址解析调用的记录  
 AAAA记录：将域名解析到IPv6地址的DNS记录  
-TXT记录：TXT记录一般指为某个主机名或域名设置的说明 
+TXT记录：TXT记录一般指为某个主机名或域名设置的说明
+
+****
+
+## 2022/9/20 npm忽略冲突
+
+```vue
+npm install --legacy-peer-deps
+```
+
+****
