@@ -78,3 +78,18 @@ npm install --legacy-peer-deps
 ```
 
 ****
+
+## 2022/9/26 tmux 命令备忘
+
+```shell
+ctrl+b or ctrl+a  #前缀键
+tmux new -s session-name #创建会话
+ctrl+b d #退出当前会话窗口
+tmux ls  #查看所有会话
+tmux a -t session-name #进入会话
+tmux switch -t session-name #切换会话
+tmux send -t session-name "order" ENTER #发送执行的命令
+tmux  capture-pane -p #打印会话的显示
+```
+
+***
