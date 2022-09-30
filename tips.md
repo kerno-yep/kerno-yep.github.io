@@ -93,3 +93,7 @@ tmux  capture-pane -p #打印会话的显示
 ```
 
 ***
+
+## 2022/9/28 php语言特性
+
+php项目中，能传filename的地方，基本上都能传协议流
