@@ -96,4 +96,12 @@ tmux  capture-pane -p #打印会话的显示
 
 ## 2022/9/28 php语言特性
 
-php项目中，能传filename的地方，基本上都能传协议流
+php项目中，能传filename的地方，基本上都能传协议流  
+
+***
+
+## 2022/10/1  常规waf特性
+
+常规的WAF一般只检测application/x-www-form-urlencoded的数据，一旦修改数据类型则将通杀各大WAF（16年的知识，今天才看到）
+
+***
